@@ -13,8 +13,13 @@ public class TestMaskify {
         assertEquals("abcd", maskify("abcd"));
     }
 
+    @Test
+    public void doesNotMaskIfShorterThanFourChars() {
+        assertEquals("abc", maskify("abc"));
+    }
+
     private String maskify(String str) {
-        if (str.length() == 4) {
+        if (str.length() <= 4) {
             return str;
         }
         return "#bcde";
