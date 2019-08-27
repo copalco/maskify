@@ -1,11 +1,19 @@
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static org.junit.Assert.assertEquals;
 
+@RunWith(JUnitParamsRunner.class)
 public class TestMaskify {
+
+    @Parameters({
+        "#bcde, abcde",
+    })
     @Test
-    public void masksAllButLastFourChars() {
-        assertEquals("#bcde", maskify("abcde"));
+    public void masksAllButLastFourChars(String expected, String input) {
+        assertEquals(expected, maskify(input));
     }
 
     @Test
