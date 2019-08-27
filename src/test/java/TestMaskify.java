@@ -9,6 +9,8 @@ import static org.junit.Assert.assertEquals;
 @RunWith(JUnitParamsRunner.class)
 public class TestMaskify {
 
+    private final Maskifier maskifier = new Maskifier();
+
     @Parameters({
         "#bcde, abcde",
         "#bbbb, bbbbb",
@@ -30,7 +32,6 @@ public class TestMaskify {
     }
 
     private String maskify(String str) {
-        Maskifier maskifier = new Maskifier();
         return maskifier.maskify(str);
     }
 }
