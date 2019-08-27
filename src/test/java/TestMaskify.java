@@ -18,20 +18,17 @@ public class TestMaskify {
     })
     @Test
     public void masksAllButLastFourChars(String expected, String input) {
-        assertEquals(expected, maskify(input));
+        assertEquals(expected, maskifier.maskify(input));
     }
 
     @Test
     public void doesNotMaskIfConsistsOfFourChars() {
-        assertEquals("abcd", maskify("abcd"));
+        assertEquals("abcd", maskifier.maskify("abcd"));
     }
 
     @Test
     public void doesNotMaskIfShorterThanFourChars() {
-        assertEquals("abc", maskify("abc"));
+        assertEquals("abc", maskifier.maskify("abc"));
     }
 
-    private String maskify(String str) {
-        return maskifier.maskify(str);
-    }
 }
