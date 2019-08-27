@@ -10,6 +10,7 @@ public class TestMaskify {
 
     @Parameters({
         "#bcde, abcde",
+        "#bbbb, bbbbb",
     })
     @Test
     public void masksAllButLastFourChars(String expected, String input) {
@@ -30,6 +31,6 @@ public class TestMaskify {
         if (str.length() <= 4) {
             return str;
         }
-        return "#bcde";
+        return "#" + str.substring(1);
     }
 }
