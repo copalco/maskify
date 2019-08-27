@@ -1,5 +1,6 @@
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
+import maskify.Maskifier;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -29,10 +30,7 @@ public class TestMaskify {
     }
 
     private String maskify(String str) {
-        if (str.length() <= 4) {
-            return str;
-        }
-        int charactersToMask = str.length() - 4;
-        return "#".repeat(charactersToMask) + str.substring(charactersToMask);
+        Maskifier maskifier = new Maskifier();
+        return maskifier.maskify(str);
     }
 }
