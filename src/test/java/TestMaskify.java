@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 public class TestMaskify {
     @Test
     public void masksAllButLastFourChars() {
-        assertEquals(maskify("abcde"), "#bcde");
+        assertEquals("#bcde", maskify("abcde"));
     }
 
     private String maskify(String str) {
