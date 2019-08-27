@@ -5,10 +5,10 @@ import static org.junit.Assert.assertEquals;
 public class TestMaskify {
     @Test
     public void masksAllButLastFourChars() {
-        assertEquals(maskify("abcde"), "####e");
+        assertEquals(maskify("abcde"), "#bcde");
     }
 
     private String maskify(String str) {
-        return "####e";
+        return "#bcde";
     }
 }
